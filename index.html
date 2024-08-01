@@ -326,40 +326,43 @@
             <div class="col-sm-6 no-padding">
                  <iframe style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.951002333522!2d76.31923637429507!3d9.938034990164233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0873e8b17e4e1f%3A0x631726fd9022096b!2sBrototype%20Kochi!5e0!3m2!1sen!2sin!4v1722487401406!5m2!1sen!2sin"  height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-            <form class="col-sm-6 cop-ck " id="form">
+            <form class="col-sm-6 cop-ck d-flex flex-column " id="form">
                 <input type="hidden" name="access_key" value="1dc37e69-0a56-4a63-9e88-0884e9690d24">
                 <h2>Contact Form</h2>
                 <div class="row cf-ro">
                     <div class="col-sm-3"><label>Enter Name :</label></div>
-                    <div class="col-sm-8">
-                        <input required  type="text" name="name" placeholder="Enter Name" id="name" class="form-control input-sm" required minlength="2">
+                    <div class="col-sm-8 input-div mb-3">
+                        <input required type="text" name="name" placeholder="Enter Name" id="name" class="form-control input-sm" required minlength="2">
+                        <span class="error-message" id="name-error"></span>
                     </div>
                 </div>
                 <div class="row cf-ro">
                     <div class="col-sm-3"><label>Email Address :</label></div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8 input-div mb-4">
                         <input required type="email" name="email" id="email" placeholder="Enter Email Address" class="form-control input-sm" required>
+                        <span class="error-message" id="email-error"></span>
                     </div>
                 </div>
                 <div class="row cf-ro">
                     <div class="col-sm-3"><label>Mobile Number:</label></div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8 input-div mb-4">
                         <input required type="tel" name="mobile" id="mobile" placeholder="Enter Mobile Number" class="form-control input-sm" required pattern="[0-9]{10}">
+                        <span class="error-message" id="mobile-error"></span>
                     </div>
                 </div>
                 <div class="row cf-ro">
                     <div class="col-sm-3"><label>Enter Message:</label></div>
-                    <div class="col-sm-8">
-                        <textarea required rows="5" name="message" placeholder="Enter Your Message" id="messege" class="form-control input-sm" required minlength="10"></textarea>
+                    <div class="col-sm-8 input-div mb-4">
+                        <textarea required rows="5" name="message" placeholder="Enter Your Message" id="message" class="form-control input-sm" required minlength="10"></textarea>
+                        <span class="error-message" id="message-error"></span>
                     </div>
                 </div>
                 <div class="row cf-ro">
                     <div class="col-sm-3"><label></label></div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-8 input-div mb-4">
                         <button type="submit" id="btnSubmit" class="btn btn-primary btn-sm">Send Message</button>
                     </div>
                 </div>
-
                 <div id="result"></div>
             </form>
             

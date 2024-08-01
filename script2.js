@@ -20,24 +20,56 @@ function validateMobile(mobile) {
 }
 
 //Function for form validations
-submitBtn.addEventListener('click',(e)=>{
-    if(name1.value.trim().length < 2){
-        alert("Enter a valid Name");
+document.getElementById('btnSubmit').addEventListener('click', (e) => {
+    
+    // delete previous error messages
+    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+    let valid = true;
+
+    // Validate name
+    if (document.getElementById('name').value.trim().length < 2) {
+        document.getElementById('name-error').innerText = "Enter a valid Name";
+        document.getElementById('name-error').style.display = 'block';
+        valid = false;
+    }
+
+    // Validate email
+    if (!validateEmail(document.getElementById('email').value)) {
+        document.getElementById('email-error').innerText = "Enter a valid Email";
+        document.getElementById('email-error').style.display = 'block';
+        valid = false;
+    }
+
+    // Validate mobile
+    if (!validateMobile(document.getElementById('mobile').value)) {
+        document.getElementById('mobile-error').innerText = "Enter a valid Phone Number";
+        document.getElementById('mobile-error').style.display = 'block';
+        valid = false;
+    }
+
+    // Validate message
+    if (document.getElementById('message').value.trim().length < 10) {
+        document.getElementById('message-error').innerText = "Message must be at least 10 characters long.";
+        document.getElementById('message-error').style.display = 'block';
+        valid = false;
+    }
+
+    if (!valid) {
         e.preventDefault();
     }
-    else if(!validateEmail(email.value)){
-        alert("Enter a valid Email");
-        e.preventDefault();
-    }
-    else if(!validateMobile(mobile.value)){
-        alert("Enter a valid Phone number");
-        e.preventDefault();
-    }
-    else if (messege.value.length < 10) {
-        alert("Message must be at least 10 characters long.");
-        e.preventDefault();
-    }
-})
+});
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validateMobile(mobile) {
+    const re = /^[0-9]{10}$/;
+    return re.test(mobile);
+}
+
 
 //Code from web3forms
 

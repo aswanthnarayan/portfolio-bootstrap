@@ -22,3 +22,13 @@ height: 70px;
     width: 100%;
     object-fit: cover;
 }
+.input-div input,textarea{
+    margin-bottom: 0px !important;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.7em;
+    margin-top: 5px;
+    display: none;
+}
