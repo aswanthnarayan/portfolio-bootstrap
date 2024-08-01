@@ -75,4 +75,4 @@ form.addEventListener('submit', function(e) {
                   result.style.display = "none";
               }, 3000);
           });
-        });
+  });
